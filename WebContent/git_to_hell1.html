@@ -25,6 +25,7 @@
         .topmenu{margin:0 auto; background:url(space.jpg) repeat; background-size:25%; box-shadow: 1px 1px 5px #222;}
 		hr{width:60%; border:1px solid #333; border-bottom:1px solid rgba(0,0,0,0.3); box-shadow: 0px 1px 5px #222;}
 		.scrl{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
+		.modal-scroll{overflow: auto;}
 		.scrollBar{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		.scrollBar-lg{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		h1{font-family:Lobster, serif; text-shadow:0px 0px 6px #eee;}
@@ -45,6 +46,14 @@
 				autoExpandScrollbar:true,
 				advanced:{autoExpandHorizontalScroll:true},
 				setWidth: "100%",
+				scrollButtons:{ enable: true }
+			});
+			$(".modal-scroll").mCustomScrollbar({
+				axis:"y",
+				theme:"light",
+				autoExpandScrollbar:true,
+				advanced:{autoExpandHorizontalScroll:true},
+				setHeight: "500",
 				scrollButtons:{ enable: true }
 			});
 			$(".scrollBar").mCustomScrollbar({
@@ -87,7 +96,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body modal-scroll">
             <ul>
                 <li><a href="#action1">1. git 설치하기</a></li>
                 <li><a href="#action2">2. path 설정하기</a></li>
@@ -103,6 +112,7 @@
                     <li style="list-style: none; text-indent:20px;">- Pull Request</li>
                 <li><a href="#action11">11. Conflict 해결하기</a></li>
                 <li><a href="#action12">12. 계정 변경하기</a></li>
+                <li><a href="#action_last">《 단축기 및 기타 명령어 》</a></li>
             </ul>
           </div>
           <div class="modal-footer">
@@ -497,6 +507,16 @@
                 <h5 class="text-white mt-3">2. 파일 내려받기(최초 1회 이후 보통 방식) : pull</h5>
             </div>
         </div>
+        <div class="row mt-5 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+                <h5 class="text-white mt-1 font-weight-bold">※용어 정리 </h5>
+                <h5 class="text-white mt-2">clone : 통째로 받아서 초기화시키는 행위(초기 1회만 실행)</h5>
+                <h5 class="text-white mt-2">pull : 다운로드 명령(최신 갱신된 내용을 가져오는 것)</h5>
+                <h5 class="text-white mt-2">patch : 서버에서 데이터를 다운받는 행위(임시브랜치에 가져오는 것)</h5>
+                <h5 class="text-white mt-2">merge : 가져온 다음 현재 브랜치에 병합하는 것</h5>
+                <h5 class="text-white mt-2">(patch + merge = pull)</h5>
+            </div>
+        </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-2 scrl my">
             <img src="rp1.png">
             <p class="text-white">리파지트리의 주소를 복사합니다</p>
@@ -831,6 +851,119 @@
                 </div>
             </div>
         </div>
+    <!--  action-->
+        <div id="action_last" class="row mt-5 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto my">
+                <h2 class="text-white font-weight-bold mb-4">《 단축기 및 기타 명령어 》</h2>
+            </div>
+        </div>
+        <div class="row my text-center pt-3 pr-5 pl-5 pb-2 mb-5">
+            <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 mx-auto pl-3 pr-4 mb-3 my">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="mkdir (Folder Name)">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">디렉토리(폴더) 만들기</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git checkout master (File Name).txt">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="rmdir /s (Folder Name)">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">폴더 삭제하기</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="dir">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">디렉토리 내용을 보여라</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="(Folder Name) + Tab">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">일부 폴더명만 입력하고 Tab을 누르면 자동완성</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="copy nul (File Name).txt">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">파일을 만드는 명령</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="del (File Name).txt">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">파일을 삭제하는 명령</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git log -2">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">로그를 위에서부터 2개만 보여라</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git checkout 030607">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">해당 시점의 로그로 돌아가라(키값은 처음 6자리만 입력해도 무방)</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git checkout master">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">다시 로그 되돌리기, 살려내기</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git checkout 8976b9 (File Name).txt">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">특정 시점의 로그에 있는 특정 파일만 가져오기</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git reset head">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">완전히 특정 시점의 로그로 돌아가기</p>
+                <p class="text-white">checkout master와의 차이 : HEAD는 여전히 master를 가리키고 있음</p>
+                <p class="text-white">reset은 시점을 돌리는 것</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git reset --hard 030607">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">강제로 특정 시점으로 돌아가며, 이전 로그는 모두 삭제한다</p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" value="git checkout master (File Name).txt">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+                  </div>
+                </div>
+                <p class="text-white">히스토리가 남아있다는 것을 전제로 한 복구 기능</p>
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 mx-auto scrollBar mr-3 my">
+                <div class="contents" style="text-align:left;">
+                    <p class="text-secondary">(본문)</p>
+                    (본문)
+                </div>
+            </div>
+        </div>  
+        
+<!--        footer-->
+        <div class="row my mb-5"></div>
+        <div class="row my mb-5"></div>
     
 <script>
 $(function(){
