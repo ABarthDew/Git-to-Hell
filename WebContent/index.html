@@ -22,6 +22,7 @@
         .upBtn{position:fixed; bottom:20px; left:20px; opacity:0.6; z-index:999; box-shadow: 1px 2px 5px #000; cursor:pointer;}
         .topmenu{margin:0 auto; background:url(space.jpg) repeat; background-size:25%; box-shadow: 1px 1px 5px #222;}
 		hr{width:60%; border:1px solid #333; border-bottom:1px solid rgba(0,0,0,0.3); box-shadow: 0px 1px 5px #222;}
+		.scrl{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		.scrollBar{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		.scrollBar-lg{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		h1{font-family:Lobster, serif; text-shadow:0px 0px 6px #eee;}
@@ -30,10 +31,18 @@
 		button{font-family:Nanum Gothic, serif;}
 		p{font-family:Nanum Gothic, serif; font-size:15px; line-height:190%;}
 	</style>
-<body>	
+<body>	scrl
 	<script>
 		$(function(){
 			//scroll
+			$(".scrl").mCustomScrollbar({
+				axis:"x",
+				theme:"light",
+				autoExpandScrollbar:true,
+				advanced:{autoExpandHorizontalScroll:true},
+				setWidth: "100%",
+				scrollButtons:{ enable: true }
+			});
 			$(".scrollBar").mCustomScrollbar({
 				axis:"y",
 				theme:"3d-thick",
@@ -422,7 +431,7 @@
                 <h5 class="text-white mt-3">2. 파일 내려받기(최초 1회 이후 보통 방식) : pull</h5>
             </div>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-2 my">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-2 scrl my">
             <img src="rp1.png">
             <p class="text-white">리파지트리의 주소를 복사합니다</p>
         </div>
@@ -710,7 +719,7 @@
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 mx-auto scrollBar-lg mb-5 my">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto scrollBar-lg mb-5 my">
                 <div class="contents" style="text-align:left;">
                     <p class="text-white">붉은색으로 표시한 곳을 기준으로 merge되지 않은 수정사항이 모두 나타납니다</p>
                     <p class="text-white">이들 중 최종 수정한 내용만 남기고 모두 지워주시면 됩니다</p>
