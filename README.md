@@ -11,3 +11,4 @@
 10. 협업방식 <br>
 &nbsp;&nbsp;-①Collaborators <br>
 &nbsp;&nbsp;-②pull Request <br>
+11. Conflict 해결하기 <br>
