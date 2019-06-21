@@ -18,8 +18,10 @@
 </head>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Audiowide|Nanum+Myeongjo|Orbitron:700|Orbitron|Song+Myung|Syncopate|Nanum+Gothic|Lobster|Noticia+Text:700|Nanum+Gothic|Nanum+Myeongjo|Noto+Serif+KR|Oleo+Script&display=swap');
+        *{text-decoration:none;}
 		body{background:url(space.jpg) repeat; background-size:20%;}
-        .upBtn{position:fixed; bottom:20px; left:20px; opacity:0.6; z-index:999; box-shadow: 1px 2px 5px #000; cursor:pointer;}
+        .upBtn{position:fixed; bottom:20px; left:12px; border-radius:50%; opacity:0.7; z-index:999; box-shadow: 1px 2px 5px #000; cursor:pointer;}
+        .leftMenu{position:fixed; bottom:70px; left:12px; border-radius:50%; opacity:0.7; z-index:999; box-shadow: 1px 2px 5px #000;}
         .topmenu{margin:0 auto; background:url(space.jpg) repeat; background-size:25%; box-shadow: 1px 1px 5px #222;}
 		hr{width:60%; border:1px solid #333; border-bottom:1px solid rgba(0,0,0,0.3); box-shadow: 0px 1px 5px #222;}
 		.scrl{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
@@ -28,10 +30,12 @@
 		h1{font-family:Lobster, serif; text-shadow:0px 0px 6px #eee;}
 		h2, h3, h4, h5{font-family:Nanum Myeongjo, serif;}
 		.contents{background:#000; color:#fff;}
-		button{font-family:Nanum Gothic, serif;}
-		p{font-family:Nanum Gothic, serif; font-size:15px; line-height:190%;}
+		button, .modal-title, .modal-body a{font-family:Nanum Gothic, serif;}
+        .modal-body a{color:#000; font-size:18px; line-height: 190%;}
+        .modal-body a:hover{text-decoration:none; opacity:0.7;}
+		p, li{font-family:Nanum Gothic, serif; font-size:15px; line-height:190%;}
 	</style>
-<body>	scrl
+<body>	
 	<script>
 		$(function(){
 			//scroll
@@ -64,9 +68,54 @@
             $('.upBtn').on("click", function(){
                 $('html, body').stop().animate({scrollTop:'0'}); 
             });
+            $('.modal-body a').on('click', function(){
+               $('html, body').stop().animate({scrollTop:$($(this).attr('href')).offset().top-30}); 
+               $(this).attr('data-dismiss', 'modal'); 
+            });
         });
 	</script>	
-	<span class="badge badge-pill badge-dark upBtn p-2">UP</span>
+<!--    left menu-->
+    <button type="button" class="btn btn-dark leftMenu text-light" data-toggle="modal" data-target="#exampleModalCenter">
+      ▶
+    </button>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="<exampleModalCent></exampleModalCent>erTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">메뉴 이동</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+                <li><a href="#action1">1. git 설치하기</a></li>
+                <li><a href="#action2">2. path 설정하기</a></li>
+                <li><a href="#action3">3. git 실행하기</a></li>
+                <li><a href="#action4">4. 경로 이동 및 저장소 생성</a></li>
+                <li><a href="#action5">5. 저장소 설정 후 커밋하기</a></li>
+                <li><a href="#action6">6. 계정 설정하기</a></li>
+                <li><a href="#action7">7. gitHub에서 리파지트리 만들기 밎 삭제하기</a></li>
+                <li><a href="#action8">8. gitHub 리파지트리에서 파일 내려받기</a></li>
+                <li><a href="#action9">9. gitHub 리파지트리에 업데이트한 파일 올리기</a></li>
+                <li><a href="#action10">10. 협업방식</a></li>
+                    <li style="list-style: none; text-indent:20px;">- Collaborator</li>
+                    <li style="list-style: none; text-indent:20px;">- Pull Request</li>
+                <li><a href="#action11">11. Conflict 해결하기</a></li>
+                <li><a href="#action12">12. 계정 변경하기</a></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--	button-->
+    <button type="button" class="btn btn-dark upBtn text-light">
+      ▲
+    </button>
+<!--   top menu-->
     <div class="row topmenu text-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto p-4">
             <a href="https://backlog.com/git-tutorial/kr/stepup/stepup1_1.html" class="btn btn-outline-light btn-lg mr-2 mb-2" target="_blank">Branch란?</a>
@@ -75,6 +124,7 @@
             <a href="https://github.com/ABarthDew/Git-to-Hell/tree/master/WebContent" class="btn btn-outline-light btn-lg mr-2 mb-2" target="_blank">제작자의 git</a>
         </div>
     </div>
+<!--    main-->
 	<div class="container-fluid text-center pl-3 pr-3">
         <div class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5">
@@ -82,7 +132,8 @@
                 <hr>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action1" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold">1. git 설치하기</h2>
             </div>
@@ -96,7 +147,8 @@
                 <h5 class="text-white mt-3">: <ins>PortableGit</ins>이라는 폴더가 만들어집니다</h5>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action2" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold">2. path 설정하기</h2>
             </div>
@@ -115,7 +167,8 @@
                 <h5 class="text-white mt-3">: 빈칸에 Portable 내 <ins>bin</ins> 폴더의 경로를 채워넣고 적용을 누르세요</h5>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action3" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-3 my">
                 <h2 class="text-white font-weight-bold">3. git 실행하기</h2>
                 <h5 class="text-white mt-3">윈도우 검색 > cmd를 실행 후, "git"을 입력하세요</h5>
@@ -176,7 +229,8 @@
                 </div>
             </div>
         </div>
-        <div class="row my text-center">
+    <!--  action-->
+        <div id="action4" class="row my text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-2 my">
                 <h2 class="text-white font-weight-bold">4. 경로 이동 및 저장소 생성</h2>
             </div>
@@ -197,7 +251,7 @@
                   </div>
                 </div>
                 <p class="text-white">d드라이브 내 폴더로 이동하려면 폴더 이름 앞에 cd 를 씁니다</p>
-                <p class="text-white">(d, c, f 등 드라이브 이동은 d:, 폴더로 이동은 cd 폴더이름)</p>
+                <p class="text-white">(드라이브와 폴더 이동 방법이 각각 다름을 인지하세요)</p>
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" value="mkdir HelloGit">
                   <div class="input-group-append">
@@ -277,7 +331,8 @@
                 </div>
             </div>
         </div>
-        <div class="row my text-center">
+    <!--  action-->
+        <div id="action5" class="row my text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto my">
                 <h2 class="text-white font-weight-bold mb-4">5. 저장소 설정 후 커밋하기</h2>
                 <h5 class="text-white mt-3">git은 수정한 파일을 Repository에 올리기 전에 중간 저장소에 올리는데, 이 과정을 staging이라고 합니다</h5>
@@ -365,7 +420,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action6" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold">6. 계정 설정하기</h2>
             </div>
@@ -399,7 +455,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action7" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold">7. gitHub에서 리파지트리 만들기 밎 삭제하기</h2>
                 <a href="https://github.com" target="_blank" class="btn btn-outline-light btn-lg mt-4">gitHub go!</a>
@@ -425,7 +482,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action8" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold mb-4">8. gitHub 리파지트리에서 파일 내려받기</h2>
                 <h5 class="text-white mt-3">※보통 리파지트리를 만들고 내 pc에 저장하는 순서는 이렇게 흘러갑니다</h5>
@@ -452,8 +510,8 @@
                   </div>
                 </div>
                 <p class="text-white">cmd창에서 파일을 받을 경로로 이동한 후, 해당 명령어를 입력합니다</p>
-                <p class="text-white">pull을 사용해도 무방하지만 최초 다운로드를 할 때는 clone이 더 좋습니다</p>
-                <p class="text-white">(pull은 따로 폴더를 만들어 놓고 다운로드 해야 함, clone은 폴더 째로 복제)</p>
+                <p class="text-white">clone 자리에 pull이 들어가도 무방하나, 최초 다운로드를 할 때는 clone이 더 편리합니다</p>
+                <p class="text-white">pull은 따로 폴더를 만들어 놓고 다운로드 해야 하지만, clone은 폴더 째로 복제되기 때문입니다</p>
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" value="git init">
                   <div class="input-group-append">
@@ -531,7 +589,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action9" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto my">
                 <h2 class="text-white font-weight-bold mb-4">9. gitHub 리파지트리에 업데이트한 파일 올리기</h2>
                 <h5 class="text-white mt-3">수정사항을 커밋한 후 리파지트리에 올리려면 pull을 먼저 수행해야 합니다</h5>
@@ -678,8 +737,9 @@
                     <p class="text-secondary">gitHub.com의 본인 리파지트리에 가서 파일이 모두 업데이트 되었음을 확인할 수 있습니다</p>
                 </div>
             </div>
-        </div>    
-        <div class="row mt-5 text-center">
+        </div>  
+    <!--  action-->  
+        <div id="action10" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold mb-4">10. 협업방식</h2>
                 <h2 class="text-white font-weight-bold mb-4">①Collaborators</h2>
@@ -719,9 +779,8 @@
                 </div>
             </div>
         </div>
-        
-        
-        <div class="row mt-5 text-center">
+    <!--  action-->
+        <div id="action11" class="row mt-5 text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
                 <h2 class="text-white font-weight-bold">11. Conflict 해결하기</h2>
                 <h5 class="text-white mt-3">이 현상은 수정사항이 겹쳤을 때, 즉 커밋을 하지 않고 여러 번 수정했을 때 나타나는 에러입니다</h5>
@@ -748,6 +807,27 @@
                     <p class="text-secondary">▲ 이 부분을 보면 어떤 파일에 에러가 났는지 알려줍니다</p>
                     Auto-merging README.md <br>
                     Automatic merge failed; fix conflicts and then commit the result. <br>
+                </div>
+            </div>
+        </div>
+    <!--  action-->
+        <div id="action12" class="row mt-5 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+                <h2 class="text-white font-weight-bold">12. 계정 변경하기</h2>
+                <h5 class="text-white mt-3">다른 계정으로 로그인 하고 싶을 때 쓰이는 방법 중 하나입니다</h5>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto scrollBar-lg mb-5 my">
+                <div class="contents" style="text-align:center;"><br>
+                    <p class="text-white">제어판을 열어 표시된 경로를 따라 갑니다</p>
+                        <img src="account1.png"><br><br>
+                        <img src="account2.png"><br><br>
+                        <img src="account3.png"><br><br>
+                    <p class="text-white">삭제 후, 평소와 같이 수정작업을 합니다</p>
+                    <p class="text-white">그리고 push 명령을 내리는 순간, 새로 로그인 창이 뜹니다</p>
+                    <p class="text-white">로그인 후 작업을 마무리하면 되겠습니다</p>
+                    <br>
                 </div>
             </div>
         </div>
