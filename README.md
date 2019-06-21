@@ -12,4 +12,5 @@
 &nbsp;&nbsp;-①Collaborators <br>
 &nbsp;&nbsp;-②pull Request <br>
 11. Conflict 해결하기 <br>
-12. 계정 변경하기
+12. 계정 변경하기 <br>
+《 단축기 및 기타 명령어 》 <br>

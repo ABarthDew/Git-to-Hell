@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--     scroll -->
+	<link rel="stylesheet" href="jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="mCSB_buttons.png"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="jquery.mCustomScrollbar.js"></script>
+</head>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Audiowide|Nanum+Myeongjo|Orbitron:700|Orbitron|Song+Myung|Syncopate|Nanum+Gothic|Lobster|Noticia+Text:700|Nanum+Gothic|Nanum+Myeongjo|Noto+Serif+KR|Oleo+Script&display=swap');
+ 		.my{border:1px solid #000;} 
+	</style>
+<body>	
+    <div class="row my text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            메뉴<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            제목<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            스크롤 본문<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            제목<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            스크롤-lg 본문<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            제목<br>
+            111111111111<br>
+        </div>
+    </div>
+    <div class="row my text-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            스크롤 본문<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mx-auto mb-5 my">
+            인풋, 버튼<br>
+            <div>
+                <input type="text" value="22222">
+                <button id="btn">button</button>
+            </div>
+            <div>
+                <input type="text" value="33333">
+                <button id="btn">button</button>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" value="git commit -m '19.6.13'">
+              <div class="input-group-append">
+                <button class="btn btn-outline-light" type="button" id="button-addon2">복사하기</button>
+              </div>
+            </div>
+            <p class="text-white">커밋합니다</p>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+            111111111111<br>
+        </div>
+    </div>
+    
+<script>
+$(function(){
+//	$('button').click(function(){
+//		$(this).parent().find('input').select(); //복사할 텍스트를 선택
+//		document.execCommand("copy"); //클립보드 복사 실행
+//		$(this).fadeIn();
+//	})
+	$('button').click(function(){
+		$(this).parent().parent().find('.form-control').select(); //복사할 텍스트를 선택
+		document.execCommand("copy"); //클립보드 복사 실행
+		$(this).fadeIn();
+	});
+})
+</script>
+</body>
+</html>
