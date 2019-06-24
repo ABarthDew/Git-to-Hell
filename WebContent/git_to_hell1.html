@@ -30,11 +30,14 @@
 		.scrollBar-lg{padding:20px; overflow: auto; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 		h1{font-family:Lobster, serif; text-shadow:0px 0px 6px #eee;}
 		h2, h3, h4, h5{font-family:Nanum Myeongjo, serif;}
+        .endc{cursor:pointer;}
+        .endc:hover{text-decoration:none; color:white; opacity:0.7;}
 		.contents{background:#000; color:#fff;}
 		button, .modal-title, .modal-body a{font-family:Nanum Gothic, serif;}
         .modal-body a{color:#000; font-size:18px; line-height: 190%;}
         .modal-body a:hover{text-decoration:none; opacity:0.7;}
 		p, li{font-family:Nanum Gothic, serif; font-size:15px; line-height:190%;}
+        .endCard{display:none; border-radius:5px; box-shadow: 0px 0px 15px #222;}
 	</style>
 <body>	
 	<script>
@@ -113,6 +116,7 @@
                 <li><a href="#action11">11. Conflict 해결하기</a></li>
                 <li><a href="#action12">12. 계정 변경하기</a></li>
                 <li><a href="#action_last">《 단축기 및 기타 명령어 》</a></li>
+                <li><a href="#action_last2">《 재미로 하는 성향테스트 》</a></li>
             </ul>
           </div>
           <div class="modal-footer">
@@ -980,6 +984,40 @@
                 <p class="text-white">리모트 연결 삭제</p>
             </div>
         </div>  
+    <!--  action-->
+        <div id="action_last2" class="row mt-5 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto my">
+                <h2 class="text-white font-weight-bold mb-4">***수고하셨습니다***</h2>
+                <h5 class="text-white mt-3">재미로 성향테스트나 하고 가시죠</h5>
+                <h5 class="text-white mt-3 font-weight-bold">Q. 나는 완전히 지친 채 귀가했다.</h5>
+                <h5 class="text-white mt-3 font-weight-bold">배가 고파 냉장고를 열었지만 반찬이라곤 얼마 전 지인이 주고 간 김치밖에 없다.</h5> 
+                <h5 class="text-white mt-3 font-weight-bold">이걸로 간단히 때워야 겠다고 생각하며 반찬을 맛보는데, 너무 매워 도저히 먹을 수가 없다.</h5>
+                <h5 class="text-white mt-3 font-weight-bold">이때, 나의 선택은?</h5>
+                <h5 class="text-white mt-4 endc" href=".endCard:nth-child(1)">A. 망설임 없이 전부 버리고 지갑부터 찾는다</h5>
+                <h5 class="text-white mt-3 endc" href=".endCard:nth-child(2)">B. 일단 보관해놓고 맛있게 조리해 먹을 방법이 없는지 찾아 보기로 한다</h5>
+                <h5 class="text-white mt-3 endc" href=".endCard:nth-child(3)">C. 발효되면 괜찮을거라 생각하며 익을 때까지 기다린다</h5>
+            </div>
+        </div>
+        <div class="row text-center pl-2 pr-2 mt-4 mb-5">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto p-5 mb-5 my endCard">
+              <h2 class="text-white font-weight-bold mb-4">Q. 울지 않는 새를 어떻게 할 것인가?</h2>
+              <h5 class="text-white mt-3 font-weight-bold">당신의 답 : 새가 울지 않는다면 죽인다</h5>
+               <p class="text-white">이 질문은 '울지 않는 새를 어떻게 할 것인가'에 관한 오다 노부나가, 도요토미 히데요시, 도쿠가와 이에야스의 답입니다. 
+               울지 않는 새는 쓸모없으니 죽이겠다고 답한 이는 오다 노부나가 입니다. 오다 노부나가는 무자비하고 다혈질이면서도 계산적이고, 매우 실용적인 인물이었습니다. 편견이 없고 안목 또한 탁월했으며, 천재적인 전술 실력에 무기 개발에도 능했습니다. 오다 노부나가의 성향을 단적으로 보여주는 예가 있습니다. 세력을 일으켜 교토를 점령했을 때, 오다 노부나가는 쇼군과 가신들을 모조리 죽였습니다. 그런데 그 중 황실 출신 요리사가 있었습니다. 이 요리사는 실력도 최고였을 뿐더러 쇼군가의 사람이 아니었기 때문에 살려두자는 여론이 강했습니다. 그러자 오다 노부나가는 요리사에게 요리를 시켰습니다. 요리 솜씨를 직접 확인한 후 괜찮으면 살려주고 그렇지 않으면 죽이기 위해서였습니다. 엄청난 카리스마의 소유자로, 남에게도 엄격하고 스스로에게도 강했던 노부나가는 말년에 부하에게 하극상 당해 비참한 최후를 맞이하게 됩니다.</p>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto p-5 mb-5 my endCard">
+              <h2 class="text-white font-weight-bold mb-4">Q. 울지 않는 새를 어떻게 할 것인가?</h2>
+              <h5 class="text-white mt-3 font-weight-bold">당신의 답 : 새를 울게 할 방법을 찾는다</h5>
+               <p class="text-white">이 질문은 '울지 않는 새를 어떻게 할 것인가'에 관한 오다 노부나가, 도요토미 히데요시, 도쿠가와 이에야스의 답입니다. 
+               새를 울게 할 방법을 찾는다고 답한 사람은 도요토미 히데요시입니다. 도요토미는 오다 노부나가가 죽자 권력의 핵심으로 떠오른 인물입니다. 당시 오다 노부나가의 심복이자 최대 경쟁자였던 도쿠가와 이에야스마저 굴복시키고 승승장구 합니다. 오다 노부나가가 그토록 바라던 전국 통일까지 이뤄냈습니다. 도요토미 히데요시는 천재적인 지략가였고 타고난 정치가였습니다만, 그만큼 타협도 잘 했습니다. 도요토미 히데요시의 정치적 승부수이자 자충수였던 임진왜란에 관해서도 다른 해석을 할 수 있습니다. 도요토미 히데요시는 전국 통일을 하는 과정에서 예수회 신부들에게 무기를 보급받았고, 그 자신은 신자를 약속했습니다. 하지만 막상 전국 통일 후 가톨릭 신자들이 늘어나자, 도요토미 히데요시는 위협을 느낌과 동시에 자신의 입지를 지킬 필요성을 느끼게 됩니다. 그래서 조선 정벌을 명분삼아 일으킨 것이 임진왜란입니다. 가톨릭으로 개종한 세력들을 모조리 외국 땅으로 파병보내 죽여버리고자 한 것입니다. 물론 이는 하나의 해석일 뿐, 역사적 사실에 관해서는 의견이 분분합니다. 어쨌든 땅이 늘어나면 가신들에게 나누어 줄 토지도 생기니 일거양득이었을 겁니다. 하지만 계획은 생각처럼 진행되지 않았고 도요토미 히데요시는 임진왜란 중 사망합니다. 설상가상으로 도요토미 히데요시는 죽자마자 권력을 빼앗깁니다. 그 후 한낱 전범 취급을 받으며 무덤이 폭파되는 등 치욕적인 일을 당하게 됩니다.</p>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto p-5 mb-5 my endCard">
+              <h2 class="text-white font-weight-bold mb-4">Q. 울지 않는 새를 어떻게 할 것인가?</h2>
+              <h5 class="text-white mt-3 font-weight-bold">당신의 답 : 새가 울 때까지 기다린다</h5>
+               <p class="text-white">이 질문은 '울지 않는 새를 어떻게 할 것인가'에 관한 오다 노부나가, 도요토미 히데요시, 도쿠가와 이에야스의 답입니다. 
+               새가 울 때까지 기다린다고 한 사람은 도쿠가와 이에야스입니다. 도쿠가와 이에야스는 나쁘게 말하면 우유부단하고, 좋게 말하면 인내심이 강했습니다. 오다 노부나가의 심복으로 지내며 그의 명령에 따라 자신의 장남과 배우자를 죽일 정도로 충성심 또한 컸습니다. 오다 노부나가 사후 도요토미 히데요시가 권력을 잡자 일선에서 물러나 철처히 권력욕을 숨기며 도요토미 히데요시의 감시에 동조하기도 했습니다. 밖에서는 오랫동안 아무것도 하지 않은 것처럼 보였지만, 도쿠가와 이에야스는 도요토미 히데요시가 임진왜란에 정신이 팔려 있는 동안 일본 내 자신의 입지를 강화합니다. 그리고 도요토미 히데요시 사후 권력을 거머쥐며, 센코쿠 시대 최후의 승리자로 자리매김합니다. 당신이 비범한 사람에 인내심이 강하다면 도쿠가와 이에야스와 같은 영광을 맞이하게 될 겁니다. 하지만 야망보다 사사로운 인맥에 사로잡혀 우유부단함을 버리지 못한다면 제갈량을 곁에 두고도 나라를 망국으로 만든 유비와도 같은 신세가 될 것입니다. 사실 도쿠가와 이에야스의 유산도 촉나라와 별로 다를 게 없습니다. 도쿠가와 이에야스가 세계 정세를 파악하지 못하고 쇄국정책을 편 탓에, 에도 막부는 서양 문물로 무장한 메이지 정부군에게 멸망하게 됩니다.</p>
+            </div>
+        </div>
 <!--        footer-->
         <div class="row my mb-5"></div><hr>
         <div class="row">
@@ -994,6 +1032,10 @@ $(function(){
 		document.execCommand("copy"); 
 		$(this).fadeIn();
 	});
+    $('.endc').on('click', function(){
+        $('.endCard').slideUp();
+        $($(this).attr('href')).slideDown();
+    });
 })
 </script>
 </body>
